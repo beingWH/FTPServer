@@ -1,0 +1,35 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="logo-element">
+                    HH+
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "FTPOperation")">
+                <a href="@Url.Action("index", "FTPOperation")"><i class="fa fa-th-large"></i> <span class="nav-label" data-i18n="nav.layouts">操作面板</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "FTPOperation")">
+                <a href="@Url.Action("UploadFile", "FTPOperation")"><i class="fa fa-diamond"></i> <span class="nav-label" data-i18n="nav.layouts">上传文件</span> </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "TestBlock")">
+                <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label" data-i18n="nav.layouts">试验面板</span> </a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Admin")">
+                <a href="#"><i class="fa fa-database"></i> <span class="nav-label" data-i18n="nav.gallery">基础库</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Admin", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "index")"><a href="@Url.Action("index", "FTPLogins")">FTP账号</a></li>
+
+                </ul>
+            </li>
+            <li class="@Html.IsSelected(controller: "UserRole")">
+                <a href="#"><i class="fa fa-apple"></i> <span class="nav-label" data-i18n="nav.gallery">权限管理</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "UserRole", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "RoleIndex")"><a href="#">角色管理</a></li>
+                    <li class="@Html.IsSelected(action: "UserIndex")"><a href="#">用户管理</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </div>
+</nav>

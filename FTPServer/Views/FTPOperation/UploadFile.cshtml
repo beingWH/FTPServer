@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "UploadFile";
+}
+
+<h2>UploadFile</h2>
+<div>
+    <button id="add">新增</button>
+    <form action="/FTPOperation/UploadFile" method="post" enctype="multipart/form-data">
+        <div id="formadd">
+            <input type="file" name="file" /><br />
+        </div>
+        <div>
+            <input type="submit" value="提交" />
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            var i = 1;
+            $("#add").click(function () {
+                var str = "<input type='file' name='file" + i.toString() + "' /><br />";
+                var btn = $(str);
+                $("#formadd").append(btn);
+                i++;
+            });
+
+        });
+    </script>
+    }
+
+
+
+

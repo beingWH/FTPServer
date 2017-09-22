@@ -1,0 +1,79 @@
+﻿@model IEnumerable<FTPServer.Infrastructure.FileStruct>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create NewFolder", "CreateDirectory")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            名称
+        </th>
+        <th>
+            路径
+        </th>
+        <th>
+            创建时间
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    if (item.IsDirectory)
+    {
+        <tr>
+            <td><a class="fa fa-folder" href="@item.Path"/>@item.Name</td>
+            <td>@item.Path</td>
+            <td>@item.CreateTime</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+    else
+    {
+        <tr>
+            <td><a class="fa fa-file" href="@item.Path" />@item.Name</td>
+            <td>@item.Path</td>
+            <td>@item.CreateTime</td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+    }
+}
+
+</table>
+
+<div>
+    <p>
+        <a id="add">Create NewSeclet</a>
+    </p>
+    <form action="/FTPOperation/UploadFile" method="post" enctype="multipart/form-data">
+        <div id="formadd">
+            <input type="file" name="file" /><br />
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+</div>
+@section scripts{
+    <script>
+        $(function () {
+            var i = 1;
+            $("#add").click(function () {
+                var str = "<input type='file' name='file" + i.toString() + "' /><br />";
+                var btn = $(str);
+                $("#formadd").append(btn);
+                i++;
+            });
+
+        });
+    </script>
+}
