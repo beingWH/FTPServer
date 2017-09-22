@@ -9,4 +9,8 @@ namespace FTPServer.Models
     {
         public string FTPUri { get; set; }
     }
+     public class FTPDir
+    {
+        public string name { get; set; }
+    }
 }

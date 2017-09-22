@@ -58,7 +58,7 @@ namespace FTPServer.Infrastructure
             this.ftpRemotePath = ftpRemotePath;
             this.ftpUserID = ftpUserID;
             this.ftpPassword = ftpPassword;
-            this.ftpURI = "ftp://" + ftpServerIP + "/" + ftpRemotePath + "/";
+            this.ftpURI = "ftp://" + ftpServerIP + "/";
         }
         ~FTPHelper()
         {

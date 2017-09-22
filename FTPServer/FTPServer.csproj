@@ -318,7 +318,6 @@
     <Content Include="Views\FTPLogins\Edit.cshtml" />
     <Content Include="Views\FTPLogins\Index.cshtml" />
     <Content Include="Views\FTPOperation\Index.cshtml" />
-    <Content Include="Views\FTPOperation\UploadFile.cshtml" />
     <Content Include="Views\FTPOperation\CreateDirectory.cshtml" />
   </ItemGroup>
   <ItemGroup>
